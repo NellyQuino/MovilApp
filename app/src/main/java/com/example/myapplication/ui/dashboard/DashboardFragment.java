@@ -34,7 +34,10 @@ public class DashboardFragment extends Fragment {
             public void onChanged(@Nullable String s) {
                 textView.setText(s);
             }
+
+
         });
+
         return root;
     }
 
