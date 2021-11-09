@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".PrincipalActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:textSize="24dp"
+                android:layout_margin="10dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="My bitácora "
+                android:textColor="@color/green_2"
+                android:paddingTop="100dp"/>
+            <EditText
+                android:id="@+id/txt_qna1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="¿Cómo te sientes?"
+                android:textColorHint="@color/green_2"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:paddingTop="50dp"/>
+            <EditText
+                android:id="@+id/txt_qna2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="¿Qué obstaculo le impide sentirse bien hoy?"
+                android:textColorHint="@color/green_2"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:paddingTop="50dp"/>
+            <EditText
+                android:id="@+id/txt_qna3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="¿Cual fue el mejor momento
+que tuvo hoy??"
+                android:textColorHint="@color/green_2"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:paddingTop="50dp" />
+
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bttn_save"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:text="Guardar"
+            android:background="@drawable/button_rounded"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp" />
+    </LinearLayout>
+</FrameLayout>
