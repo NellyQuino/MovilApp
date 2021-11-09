@@ -96,6 +96,8 @@ public class LoginActivity extends AppCompatActivity {
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
             dialog.getWindow().setBackgroundDrawable(getDrawable(R.drawable.dialog_bg));
         }
+
+
         dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
 

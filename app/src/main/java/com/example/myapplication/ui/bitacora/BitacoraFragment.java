@@ -1,4 +1,4 @@
-package com.example.myapplication.ui.bitacora;
+package com.example.myapplication.ui.dashboard;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,23 +12,24 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.myapplication.R;
 import com.example.myapplication.databinding.FragmentBitacoraBinding;
 
-public class BitacoraFragment extends Fragment {
+public class DashboardFragment extends Fragment {
 
-    private BitacoraViewModel bitacoraViewModel;
+    private DashboardViewModel dashboardViewModel;
     private FragmentBitacoraBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        bitacoraViewModel =
-                new ViewModelProvider(this).get(BitacoraViewModel.class);
+        dashboardViewModel =
+                new ViewModelProvider(this).get(DashboardViewModel.class);
 
         binding = FragmentBitacoraBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textDashboard;
-        bitacoraViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        final TextView textView = binding. txtQna1;
+        dashboardViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);
