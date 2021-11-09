@@ -1,5 +1,6 @@
 package com.example.myapplication.ui.home;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,34 +14,60 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.myapplication.R;
-import com.example.myapplication.databinding.FragmentHomeBinding;
+import com.example.myapplication.ui.adapter.SliderAdapter;
+import com.example.myapplication.ui.entity.SliderItem;
+import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
+import com.smarteist.autoimageslider.SliderAnimations;
+import com.smarteist.autoimageslider.SliderView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class HomeFragment extends Fragment {
 
-    private HomeViewModel homeViewModel;
-    private FragmentHomeBinding binding;
+    private SliderView svCarrusel;
+    private SliderAdapter sliderAdapter;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        homeViewModel =
-                new ViewModelProvider(this).get(HomeViewModel.class);
 
-        binding = FragmentHomeBinding.inflate(inflater, container, false);
-        View root = binding.getRoot();
 
-        final TextView textView = binding.textHome;
-        homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
-        return root;
+        return inflater.inflate(R.layout.fragment_home, container, false);
     }
 
     @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        binding = null;
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        init(view);
+        initAdapter();
+        loadData();
+    }
+
+    private void init(View view) {
+        svCarrusel = view.findViewById(R.id.svCarrusel);
+    }
+
+    private void initAdapter() {
+        sliderAdapter = new SliderAdapter(getContext());
+
+        svCarrusel.setSliderAdapter(sliderAdapter);
+
+        svCarrusel.setIndicatorAnimation(IndicatorAnimationType.WORM);
+        svCarrusel.setSliderTransformAnimation(SliderAnimations.SIMPLETRANSFORMATION);
+        svCarrusel.setAutoCycleDirection(SliderView.AUTO_CYCLE_DIRECTION_BACK_AND_FORTH);
+        svCarrusel.setIndicatorSelectedColor(Color.WHITE);
+        svCarrusel.setIndicatorUnselectedColor(Color.GRAY);
+        svCarrusel.setScrollTimeInSec(4);
+        svCarrusel.startAutoCycle();
+    }
+
+    private void loadData() {
+        List<SliderItem> lista = new ArrayList<>();
+        lista.add(new SliderItem(R.drawable.medicina4));
+        lista.add(new SliderItem(R.drawable.medicina5));
+        lista.add(new SliderItem(R.drawable.medicina6));
+        lista.add(new SliderItem(R.drawable.medicina7));
+        lista.add(new SliderItem(R.drawable.medicina8));
+        sliderAdapter.updateItem(lista);
     }
 }

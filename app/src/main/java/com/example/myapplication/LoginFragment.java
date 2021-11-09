@@ -21,6 +21,9 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthEmailException;
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
+import com.google.firebase.auth.FirebaseAuthInvalidUserException;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -133,11 +136,20 @@ public class LoginFragment extends Fragment {
                             Intent intent = new Intent(LoginActivity.getContext(), PrincipalActivity.class);
                             startActivity(intent);
                         } else {
-                            // If sign in fails, display a message to the user.
-                            Log.w(TAG, "signInWithEmail:failure", task.getException());
                             Context context = LoginActivity.getContext();
-                            Toast.makeText(context, "Authentication failed.",
-                                    Toast.LENGTH_SHORT).show();
+                            if(task.getException() instanceof FirebaseAuthInvalidUserException) {
+                                Toast.makeText(context, "El correo electronico ingresado\n no esta registrado",
+                                        Toast.LENGTH_SHORT).show();
+                            }
+                            else if(task.getException() instanceof FirebaseAuthInvalidCredentialsException) {
+                                Toast.makeText(context, "La contraseña ingresada es incorrecta",
+                                        Toast.LENGTH_SHORT).show();
+                            }
+                            else {
+                                Log.w(TAG, "signInWithEmail:failure", task.getException());
+                                Toast.makeText(context, "Inicio de sesión fallido, intente de nuevo",
+                                        Toast.LENGTH_SHORT).show();
+                            }
                         }
                     }
                 });

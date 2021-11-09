@@ -77,7 +77,7 @@ public class PrincipalActivity extends AppCompatActivity {
         editAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(PrincipalActivity.this, "Activity_EditarCuenta", Toast.LENGTH_SHORT).show();
+                Toast.makeText(PrincipalActivity.this, "Activity_EditarCuenta_InProgress", Toast.LENGTH_SHORT).show();
             }
         });
 

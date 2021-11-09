@@ -1,16 +1,16 @@
-package com.example.myapplication.ui.dashboard;
+package com.example.myapplication.ui.asistencia_medica;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class DashboardViewModel extends ViewModel {
+public class AsistenciaMedicaViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public DashboardViewModel() {
+    public AsistenciaMedicaViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is dashboard fragment");
+        mText.setValue("Fragmento de asistencia medica");
     }
 
     public LiveData<String> getText() {

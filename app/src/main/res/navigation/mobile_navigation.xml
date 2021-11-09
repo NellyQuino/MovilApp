@@ -13,13 +13,13 @@
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.example.myapplication.ui.dashboard.DashboardFragment"
+        android:name="com.example.myapplication.ui.bitacora.BitacoraFragment"
         android:label="@string/title_bitacora"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_bitacora" />
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="com.example.myapplication.ui.notifications.NotificationsFragment"
+        android:name="com.example.myapplication.ui.asistencia_medica.AsistenciaMedicaFragment"
         android:label="@string/title_asistenciaMedica"
-        tools:layout="@layout/fragment_notifications" />
+        tools:layout="@layout/fragment_asistenciaMedica" />
 </navigation>

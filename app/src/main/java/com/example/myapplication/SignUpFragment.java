@@ -23,7 +23,9 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -104,7 +106,7 @@ public class SignUpFragment extends Fragment {
         }
         else{
             if(contra.length() >= 8){
-                createAccount(correo, contra);
+                createAccount(correo, contra, nombre);
                 //User user = new User();
                 //user.setId(UUID.randomUUID().toString());
                 //user.setName(name.getText().toString());
@@ -130,7 +132,7 @@ public class SignUpFragment extends Fragment {
         }
     }
 
-    private void createAccount(String email, String password) {
+    private void createAccount(String email, String password, String name) {
         // [START create_user_with_email]
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(new LoginActivity(), new OnCompleteListener<AuthResult>() {
@@ -139,25 +141,31 @@ public class SignUpFragment extends Fragment {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "createUserWithEmail:success");
+                            //Toast.makeText(LoginActivity.getContext(), "Registro exitoso!", Toast.LENGTH_SHORT).show();
                             FirebaseUser user = mAuth.getCurrentUser();
-
+                            UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
+                                    .setDisplayName(name)
+                                    .build();
+                            user.updateProfile(profileUpdates);
                             LoginActivity.getDialog().show();
-                            new CountDownTimer(2000, 1000){
+                            new CountDownTimer(4000, 1000){
                                 @Override
                                 public void onTick(long l) { }
                                 @Override
                                 public void onFinish() {
                                     LoginActivity.getDialog().dismiss();
+                                    Intent intent = new Intent(LoginActivity.getContext(), LoginActivity.class);
+                                    startActivity(intent);
                                 }
                             }.start();
-                            Intent intent = new Intent(LoginActivity.getContext(), LoginActivity.class);
-                            startActivity(intent);
                         } else {
-                            // If sign in fails, display a message to the user.
                             Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                            Toast.makeText(LoginActivity.getContext(), "Authentication failed.",
-                                    Toast.LENGTH_SHORT).show();
-
+                            if(task.getException() instanceof FirebaseAuthUserCollisionException) {
+                                Toast.makeText(LoginActivity.getContext(), "Ya existe un usuario\n con el correo ingresado!", Toast.LENGTH_SHORT).show();
+                            }
+                            else{
+                                Toast.makeText(LoginActivity.getContext(), "Registro fallido, intente de nuevo.", Toast.LENGTH_SHORT).show();
+                            }
                         }
                     }
                 });
