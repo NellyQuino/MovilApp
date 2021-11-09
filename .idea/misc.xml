@@ -5,6 +5,7 @@
       <map>
         <entry key="..\:/Users/Equipo/AndroidStudioProjects/MovilApp/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.36875" />
         <entry key="..\:/Users/Equipo/AndroidStudioProjects/MovilApp/app/src/main/res/drawable/background.xml" value="0.3828125" />
+        <entry key="..\:/Users/Equipo/AndroidStudioProjects/MovilApp/app/src/main/res/drawable/button_rounded.xml" value="0.3828125" />
         <entry key="..\:/Users/Equipo/AndroidStudioProjects/MovilApp/app/src/main/res/drawable/button_rounded_border.xml" value="0.3828125" />
         <entry key="..\:/Users/Equipo/AndroidStudioProjects/MovilApp/app/src/main/res/drawable/button_social.xml" value="0.3828125" />
         <entry key="..\:/Users/Equipo/AndroidStudioProjects/MovilApp/app/src/main/res/drawable/button_social_border.xml" value="0.3828125" />
@@ -16,6 +17,7 @@
         <entry key="..\:/Users/Equipo/AndroidStudioProjects/MovilApp/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.36875" />
         <entry key="..\:/Users/Equipo/AndroidStudioProjects/MovilApp/app/src/main/res/drawable/nav_bttom_bg.xml" value="0.3828125" />
         <entry key="..\:/Users/Equipo/AndroidStudioProjects/MovilApp/app/src/main/res/drawable/splas_sreen.xml" value="0.3828125" />
+        <entry key="..\:/Users/Equipo/AndroidStudioProjects/MovilApp/app/src/main/res/drawable/splash.xml" value="0.2796296296296296" />
         <entry key="..\:/Users/Equipo/AndroidStudioProjects/MovilApp/app/src/main/res/drawable/text_input.xml" value="0.3828125" />
         <entry key="..\:/Users/Equipo/AndroidStudioProjects/MovilApp/app/src/main/res/drawable/top_actionbar_bg.xml" value="0.3828125" />
         <entry key="..\:/Users/Equipo/AndroidStudioProjects/MovilApp/app/src/main/res/layout/activity_login.xml" value="0.3484375" />
