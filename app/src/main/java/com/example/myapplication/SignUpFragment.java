@@ -4,6 +4,7 @@ import android.app.Application;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.util.Log;
@@ -42,6 +43,7 @@ public class SignUpFragment extends Fragment {
     float v = 0;
     private static final String TAG = "EmailPassword";
     FirebaseAuth mAuth;
+    Dialog signUpSucceful;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
@@ -141,18 +143,27 @@ public class SignUpFragment extends Fragment {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "createUserWithEmail:success");
-                            //Toast.makeText(LoginActivity.getContext(), "Registro exitoso!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.getContext(), "Registro exitoso!", Toast.LENGTH_SHORT).show();
                             FirebaseUser user = mAuth.getCurrentUser();
                             UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
                                     .setDisplayName(name)
                                     .build();
                             user.updateProfile(profileUpdates);
+                            //signUpSucceful = LoginActivity.getDialog();
+                            //signUpSucceful.setContentView(R.layout.custom_dialog);
+                            //if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
+                                //signUpSucceful.getWindow().setBackgroundDrawable(getContext().getDrawable(R.drawable.dialog_bg));
+                            //}
+                            //signUpSucceful.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                            //signUpSucceful.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
+                            //signUpSucceful.show();
                             LoginActivity.getDialog().show();
                             new CountDownTimer(4000, 1000){
                                 @Override
                                 public void onTick(long l) { }
                                 @Override
                                 public void onFinish() {
+                                    //signUpSucceful.dismiss();
                                     LoginActivity.getDialog().dismiss();
                                     Intent intent = new Intent(LoginActivity.getContext(), LoginActivity.class);
                                     startActivity(intent);

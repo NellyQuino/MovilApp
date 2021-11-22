@@ -1,24 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".ui.bitacora.BitacoraFragment">
-
-    <TextView
-        android:id="@+id/text_dashboard"
+    android:orientation="vertical"
+    tools:context=".PrincipalActivity">
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textColor="#0D484D"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical"
+        tools:context=".PrincipalActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:isScrollContainer="true"
+            android:orientation="vertical"
+            android:scrollbars="vertical">
+
+            <LinearLayout
+                android:layout_width="400dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="10dp"
+                    android:paddingTop="50dp"
+                    android:text="Mi bitácora "
+                    android:textColor="@color/green_2"
+                    android:textSize="24dp" />
+
+                <EditText
+                    android:id="@+id/txt_qna1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="¿Cómo te sientes?"
+                    android:inputType="textPersonName"
+                    android:paddingTop="50dp"
+                    android:textColor="#668974"
+                    android:textColorHint="@color/green_2"
+                    android:textColorLink="@color/green_2" />
+
+                <EditText
+                    android:id="@+id/txt_qna2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="¿Qué obstaculo le impide sentirse bien hoy?"
+                    android:inputType="textPersonName"
+                    android:paddingTop="50dp"
+                    android:textColor="#668974"
+                    android:textColorHint="@color/green_2"
+                    android:textColorLink="@color/green_2" />
+
+                <EditText
+                    android:id="@+id/txt_qna3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="¿Cual fue el mejor momento que tuvo hoy??"
+                    android:inputType="textPersonName"
+                    android:paddingTop="50dp"
+                    android:textColor="#668974"
+                    android:textColorHint="@color/green_2"
+                    android:textColorLink="@color/green_2" />
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/bttn_save"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/button_rounded"
+                android:text="Guardar" />
+        </LinearLayout>
+    </FrameLayout>
+</ScrollView>

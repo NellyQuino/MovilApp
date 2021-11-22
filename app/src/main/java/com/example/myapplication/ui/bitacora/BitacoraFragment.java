@@ -1,49 +1,18 @@
-package com.example.myapplication.ui.dashboard;
+package com.example.myapplication.ui.bitacora;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
 
 import com.example.myapplication.R;
-import com.example.myapplication.databinding.FragmentBitacoraBinding;
 
-public class DashboardFragment extends Fragment {
-
-    private DashboardViewModel dashboardViewModel;
-    private FragmentBitacoraBinding binding;
-
+public class BitacoraFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        dashboardViewModel =
-                new ViewModelProvider(this).get(DashboardViewModel.class);
-
-        binding = FragmentBitacoraBinding.inflate(inflater, container, false);
-        View root = binding.getRoot();
-
-        final TextView textView = binding. txtQna1;
-        dashboardViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-
-
-        });
-
-        return root;
-    }
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        binding = null;
+        return inflater.inflate(R.layout.fragment_bitacora, container, false);
     }
 }

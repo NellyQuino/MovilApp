@@ -14,6 +14,7 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.util.Log;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
@@ -92,14 +93,6 @@ public class LoginActivity extends AppCompatActivity {
 
         context = LoginActivity.this;
         dialog = new Dialog(this);
-        dialog.setContentView(R.layout.custom_dialog);
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
-            dialog.getWindow().setBackgroundDrawable(getDrawable(R.drawable.dialog_bg));
-        }
-
-
-        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
 
         inicializarFirebase();
         tabLayout = findViewById(R.id.tab_layout);
@@ -135,18 +128,47 @@ public class LoginActivity extends AppCompatActivity {
         fb.animate().translationY(0).alpha(1).setDuration(1000).setStartDelay(600).start();
         outlook.animate().translationY(0).alpha(1).setDuration(1000).setStartDelay(800).start();
         tabLayout.animate().translationY(0).alpha(1).setDuration(1000).setStartDelay(100).start();
+        dialog = new Dialog(this);
+        dialog.setContentView(R.layout.custom_dialog);
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
+            dialog.getWindow().setBackgroundDrawable(getContext().getDrawable(R.drawable.dialog_bg));
+        }
+        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
+    }
 
+    public void showSplash() {
+        dialog.setContentView(R.layout.splash_sreen);
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
+            dialog.getWindow().setBackgroundDrawable(getDrawable(R.drawable.background));
+        }
+        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+        dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
+        dialog.show();
+        new CountDownTimer(2000, 1000){
+            @Override
+            public void onTick(long l)
+            {
+
+            }
+            @Override
+            public void onFinish() {
+                // Check if user is signed in (non-null) and update UI accordingly.
+                dialog.dismiss();
+                FirebaseUser currentUser = mAuth.getCurrentUser();
+                if(currentUser != null){
+                    Intent intent = new Intent(LoginActivity.getContext(), PrincipalActivity.class);
+                    startActivity(intent);
+                }
+            }
+        }.start();
     }
 
     @Override
     public void onStart() {
+        showSplash();
         super.onStart();
-        // Check if user is signed in (non-null) and update UI accordingly.
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        if(currentUser != null){
-            Intent intent = new Intent(this, PrincipalActivity.class);
-            startActivity(intent);
-        }
+
     }
 
     private void inicializarFirebase() {

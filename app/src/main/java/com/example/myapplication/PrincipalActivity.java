@@ -7,6 +7,7 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -25,6 +26,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class PrincipalActivity extends AppCompatActivity {
 
+    private static Context context;
     FirebaseAuth firebaseAuth;
     FirebaseUser currentuser;
     TextView userName;
@@ -33,10 +35,16 @@ public class PrincipalActivity extends AppCompatActivity {
     TextView userInfo;
     Dialog menuDialog;
 
+    public static Context getContext() {
+        return context;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_principal);
+
+        context = PrincipalActivity.this;
 
         firebaseAuth = LoginActivity.getmAuth();
         currentuser = firebaseAuth.getCurrentUser();
