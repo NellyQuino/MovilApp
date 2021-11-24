@@ -1,6 +1,7 @@
 package com.example.myapplication.ui.home;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -16,6 +17,7 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.myapplication.EjerciciosActivity;
 import com.example.myapplication.PrincipalActivity;
 import com.example.myapplication.R;
 import com.example.myapplication.ui.adapter.ListAdapter;
@@ -38,22 +40,34 @@ public class HomeFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         ViewGroup root = (ViewGroup) inflater.inflate(R.layout.fragment_home, container, false) ;
         init(root);
+
         return root;
     }
 
     private void init(@NonNull ViewGroup root) {
         elements = new ArrayList<>();
-        elements.add(new ListElement("#D2DCD6", "Actividad 1", "Esta es la actividad 1"));
-        elements.add(new ListElement("#D2DCD6", "Actividad 2", "Esta es la actividad 2"));
-        elements.add(new ListElement("#D2DCD6", "Actividad 3", "Esta es la actividad 3"));
-        elements.add(new ListElement("#D2DCD6", "Actividad 4", "Esta es la actividad 4"));
-        elements.add(new ListElement("#D2DCD6", "Actividad 5", "Esta es la actividad 5"));
+        elements.add(new ListElement(R.drawable.ic_inicio, "#D2DCD6","Actividad 1", "Esta es la actividad 1"));
+        elements.add(new ListElement(R.drawable.ic_inicio,"#D2DCD6", "Actividad 2", "Esta es la actividad 2"));
+        elements.add(new ListElement(R.drawable.ic_inicio,"#D2DCD6", "Actividad 3", "Esta es la actividad 3"));
+        elements.add(new ListElement(R.drawable.ic_inicio,"#D2DCD6", "Actividad 4", "Esta es la actividad 4"));
+        elements.add(new ListElement(R.drawable.ic_inicio,"#D2DCD6", "Actividad 5", "Esta es la actividad 5"));
 
-        ListAdapter listAdapter = new ListAdapter(elements, getContext());
+        ListAdapter listAdapter = new ListAdapter(elements, getContext(), new ListAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(ListElement item) {
+                moveToActivity(item);
+            }
+        });
         RecyclerView recyclerView = root.findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(listAdapter);
+    }
+
+    public void moveToActivity(ListElement item) {
+        Intent intent = new Intent(getContext(), EjerciciosActivity.class);
+        intent.putExtra("ListElement", item);
+        startActivity(intent);
     }
 
     @Override
