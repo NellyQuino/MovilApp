@@ -35,9 +35,12 @@ public class PrincipalActivity extends AppCompatActivity {
     TextView userInfo;
     Dialog menuDialog;
 
+
     public static Context getContext() {
         return context;
     }
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +54,7 @@ public class PrincipalActivity extends AppCompatActivity {
         userName = findViewById(R.id.txtView_nombre);
         userName.setText(currentuser.getDisplayName());
         userMenu = findViewById(R.id.ibttn_user);
+        context = PrincipalActivity.this;
 
         menuDialog = new Dialog(this);
         menuDialog.setContentView(R.layout.options_account);
@@ -99,5 +103,6 @@ public class PrincipalActivity extends AppCompatActivity {
             }
         });
     }
+
 
 }
