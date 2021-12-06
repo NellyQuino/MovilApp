@@ -27,7 +27,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:layout_margin="10dp"
-                    android:text=" Números de emergecia "
+                    android:text=" Números de emergencia "
                     android:textColor="@color/green_2"
                     android:textSize="24dp" />
                 <TextView
@@ -38,15 +38,46 @@
                     android:text=" Emergencias "
                     android:textColor="@color/green"
                     android:textSize="18dp" />
-                <androidx.appcompat.widget.AppCompatButton
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="30dp"
+                    android:text="Hospital "
+                    android:textColor="@color/green"
+                    android:textSize="18dp" />
+                <Button
                     android:id="@+id/bttn_asistecia"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginHorizontal="300dp"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="10dp"
                     android:background="@drawable/button_rounded"
-                    android:text="Llamar" />
+                    app:itemIconTint="@color/white"
+                    android:icon="@drawable/ic_medico"
+                    android:text="Llamar"
+                    android:visibility="visible" />
+                <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="30dp"
+                android:text=" Farmacia "
+                android:textColor="@color/green"
+                android:textSize="18dp" />
+                <Button
+                    android:id="@+id/bttn_farmacia"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginHorizontal="300dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/button_rounded"
+                    app:itemIconTint="@color/white"
+                    android:icon="@drawable/ic_medico"
+                    android:text="Llamar"
+                    android:visibility="visible" />
 
             </LinearLayout>
         </LinearLayout>
