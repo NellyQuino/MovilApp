@@ -25,7 +25,7 @@ import com.example.myapplication.databinding.FragmentAsistenciaBinding;
 public class AsistenciaMedicaFragment extends Fragment {
 
     Button bttn_asistecia;
-    Button bttn_hospital;
+    Button bttn_farmacia;
     private static final String TAG="Etiqueta: ";
     String phoneNumber = "6642937735";
     private static final Integer REQUEST_CODE = 1;
@@ -35,6 +35,7 @@ public class AsistenciaMedicaFragment extends Fragment {
         ViewGroup root = (ViewGroup) inflater.inflate(R.layout.fragment_asistencia, container, false);
 
         bttn_asistecia = root.findViewById(R.id.bttn_asistecia);
+        bttn_farmacia = root.findViewById(R.id.bttn_farmacia);
 
         //Llamarda
         bttn_asistecia.setOnClickListener(new View.OnClickListener() {
@@ -50,7 +51,7 @@ public class AsistenciaMedicaFragment extends Fragment {
                 }
             }
         });
-        bttn_hospital.setOnClickListener(new View.OnClickListener() {
+        bttn_farmacia.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent llamadaIntent = new Intent(Intent.ACTION_CALL);
