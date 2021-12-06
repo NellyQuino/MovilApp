@@ -46,11 +46,11 @@ public class HomeFragment extends Fragment {
 
     private void init(@NonNull ViewGroup root) {
         elements = new ArrayList<>();
-        elements.add(new ListElement(R.drawable.ic_inicio, "#D2DCD6","Actividad 1", "Esta es la actividad 1"));
-        elements.add(new ListElement(R.drawable.ic_inicio,"#D2DCD6", "Actividad 2", "Esta es la actividad 2"));
-        elements.add(new ListElement(R.drawable.ic_inicio,"#D2DCD6", "Actividad 3", "Esta es la actividad 3"));
-        elements.add(new ListElement(R.drawable.ic_inicio,"#D2DCD6", "Actividad 4", "Esta es la actividad 4"));
-        elements.add(new ListElement(R.drawable.ic_inicio,"#D2DCD6", "Actividad 5", "Esta es la actividad 5"));
+        elements.add(new ListElement(R.drawable.cuello, "#D2DCD6","Control de estrés", "Por medio del cuello"));
+        elements.add(new ListElement(R.drawable.espalda,"#D2DCD6", "Control de ansiedad", "Por medio de la espalda"));
+        elements.add(new ListElement(R.drawable.cabeza,"#D2DCD6", "Control de estrés", "Por medio de nuca"));
+        elements.add(new ListElement(R.drawable.mano,"#D2DCD6", "Control de ansiedad", "Por medio de las manos"));
+        elements.add(new ListElement(R.drawable.piernas,"#D2DCD6", "Control de estrés", "Por medio de las piernas"));
 
         ListAdapter listAdapter = new ListAdapter(elements, getContext(), new ListAdapter.OnItemClickListener() {
             @Override
