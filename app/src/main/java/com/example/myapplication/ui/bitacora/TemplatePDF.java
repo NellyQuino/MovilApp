@@ -68,7 +68,7 @@ public class TemplatePDF {
         DateFormat df = new SimpleDateFormat("dd-MM-yyyy");
         String date = df.format(Calendar.getInstance().getTime());
 
-        pdfFile = new File(folder,"Mibitácora_" +date+ ".pdf");
+        pdfFile = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS),"Mibitácora_" +date+ ".pdf");
     }
 
     //Cerrar el documento

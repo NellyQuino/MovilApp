@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">Mi bitácora</string>
     <string name="title_activity_main">Mi bitácora</string>
     <string name="title_inicio">Inicio</string>
     <string name="title_bitacora">Bitácora</string>
