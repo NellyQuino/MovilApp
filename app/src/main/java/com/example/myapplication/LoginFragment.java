@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import static android.widget.Toast.makeText;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -21,15 +22,12 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseAuthEmailException;
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.FirebaseAuthInvalidUserException;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
-
-import java.util.concurrent.Executor;
 
 public class LoginFragment extends Fragment {
 
@@ -38,6 +36,7 @@ public class LoginFragment extends Fragment {
     float v = 0;
     private static final String TAG = "EmailPassword";
     FirebaseAuth mAuth;
+    private ProgressDialog progressDialog;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
@@ -45,9 +44,11 @@ public class LoginFragment extends Fragment {
 
         mAuth = LoginActivity.getmAuth();
 
+        progressDialog = new ProgressDialog(LoginActivity.getContext());
+
         email = root.findViewById(R.id.etxt_email);
         password = root.findViewById(R.id.eTxt_password);
-        forgetPass = root.findViewById(R.id.bttn_forgetPass);
+        forgetPass = root.findViewById(R.id.bttn_editNombre);
         login = root.findViewById(R.id.bttn_login);
 
         email.setTranslationX(800);
@@ -78,6 +79,14 @@ public class LoginFragment extends Fragment {
                 {
                     signIn(email.getText().toString(), password.getText().toString());
                 }
+            }
+        });
+
+        forgetPass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.getContext(), ForgotPassword.class);
+                startActivity(intent);
             }
         });
 
@@ -125,6 +134,8 @@ public class LoginFragment extends Fragment {
 
     private void signIn(String email, String password) {
         // [START sign_in_with_email]
+        progressDialog.setMessage("Intentando ingresar...");
+        progressDialog.show();
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(new LoginActivity(), new OnCompleteListener<AuthResult>() {
                     @Override
@@ -151,6 +162,7 @@ public class LoginFragment extends Fragment {
                                         Toast.LENGTH_SHORT).show();
                             }
                         }
+                        progressDialog.dismiss();
                     }
                 });
         // [END sign_in_with_email]

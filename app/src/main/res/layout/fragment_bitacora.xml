@@ -17,86 +17,98 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:gravity="center">
+        android:gravity="center"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
+
                 <TextView
                     android:layout_width="wrap_content"
-                    android:textSize="24dp"
-                    android:layout_margin="10dp"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:text="Mi bitácora "
-                    android:textColor="@color/green_2" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:textSize="20dp"
-                    android:layout_margin="10dp"
-                    android:layout_height="wrap_content"
-                    android:text="¿Cómo te sientes?"
+                    android:layout_margin="5dp"
+                    android:paddingTop="20dp"
+                    android:text="¿Cómo te sientes hoy?"
                     android:textColor="@color/green_2"
-                    android:paddingTop="30dp"/>
+                    android:textSize="20dp" />
 
                 <EditText
                     android:id="@+id/txt_qna1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/edit_txt_bg"
                     android:ems="10"
                     android:hint="Respuesta"
                     android:inputType="textPersonName"
-                    android:paddingTop="20dp"
-                    android:textColor="@color/black"
-                    android:textColorHint="@color/black" />
+                    android:paddingStart="20dp"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp"
+                    android:textColor="@color/green"
+                    android:textColorHint="@color/green" />
+
                 <TextView
                     android:layout_width="wrap_content"
-                    android:textSize="20dp"
-                    android:layout_margin="10dp"
                     android:layout_height="wrap_content"
-                    android:text="¿Qué obstaculo le impide sentirse bien hoy?"
+                    android:layout_margin="5dp"
+                    android:paddingTop="30dp"
+                    android:text="¿Qué obstaculo te impide sentirte bien?"
                     android:textColor="@color/green_2"
-                    android:paddingTop="30dp"/>
+                    android:textSize="20dp" />
 
                 <EditText
                     android:id="@+id/txt_qna2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/edit_txt_bg"
                     android:ems="10"
                     android:hint="Respuesta"
                     android:inputType="textPersonName"
-                    android:paddingTop="20dp"
-                    android:textColor="@color/black"
-                    android:textColorHint="@color/black" />
+                    android:paddingStart="20dp"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp"
+                    android:textColor="@color/green"
+                    android:textColorHint="@color/green" />
+
                 <TextView
                     android:layout_width="wrap_content"
-                    android:textSize="20dp"
-                    android:layout_margin="10dp"
                     android:layout_height="wrap_content"
-                    android:text="¿Cuál fue el mejor momento que tuvo hoy?"
+                    android:layout_margin="5dp"
+                    android:paddingTop="30dp"
+                    android:text="¿Cuál fue el mejor momento que has tenido hoy?"
                     android:textColor="@color/green_2"
-                    android:paddingTop="30dp"/>
+                    android:textSize="20dp" />
 
                 <EditText
                     android:id="@+id/txt_qna3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/edit_txt_bg"
                     android:ems="10"
                     android:hint="Respuesta"
                     android:inputType="textPersonName"
-                    android:paddingTop="20dp"
-                    android:textColor="@color/black"
-                    android:textColorHint="@color/black" />
+                    android:paddingStart="20dp"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp"
+                    android:textColor="@color/green"
+                    android:textColorHint="@color/green" />
+
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/bttn_save"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="30dp"
-                    android:text="Guardar"
-                    android:background="@drawable/button_rounded"
                     android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="50dp"/>
+                    android:layout_marginHorizontal="30dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginBottom="30dp"
+                    android:background="@drawable/button_rounded"
+                    android:text="Guardar"
+                    android:textSize="16sp"/>
 
             </LinearLayout>
         </LinearLayout>

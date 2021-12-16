@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import android.app.Application;
 import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
@@ -44,12 +45,15 @@ public class SignUpFragment extends Fragment {
     private static final String TAG = "EmailPassword";
     FirebaseAuth mAuth;
     Dialog signUpSucceful;
+    private ProgressDialog progressDialog;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         ViewGroup root = (ViewGroup) inflater.inflate(R.layout.signup_fragment, container, false);
 
         mAuth = LoginActivity.getmAuth();
+
+        progressDialog = new ProgressDialog(LoginActivity.getContext());
 
         name = root.findViewById(R.id.eTxt_nombre);
         email = root.findViewById(R.id.etxt_email);
@@ -109,24 +113,6 @@ public class SignUpFragment extends Fragment {
         else{
             if(contra.length() >= 8){
                 createAccount(correo, contra, nombre);
-                //User user = new User();
-                //user.setId(UUID.randomUUID().toString());
-                //user.setName(name.getText().toString());
-                //user.setEmail(email.getText().toString());
-               // user.setPassword(password.getText().toString());
-                //LoginActivity.getDatabaseReference().child("User").child(user.getId()).setValue(user);
-               // LoginActivity.getDialog().show();
-               // new CountDownTimer(2000, 1000){
-                   // @Override
-                    //public void onTick(long l) {
-                   // }
-                   // @Override
-                   // public void onFinish() {
-                        //LoginActivity.getDialog().dismiss();
-                    //}
-                //}.start();
-                //limpiarEditTxt();
-                //existeUsuario();
             }
             else{
                 password.setError("La contraseña debe tener igual o mas de 8 caracteres");
@@ -136,6 +122,8 @@ public class SignUpFragment extends Fragment {
 
     private void createAccount(String email, String password, String name) {
         // [START create_user_with_email]
+        progressDialog.setMessage("Intentando registro...");
+        progressDialog.show();
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(new LoginActivity(), new OnCompleteListener<AuthResult>() {
                     @Override
@@ -149,14 +137,6 @@ public class SignUpFragment extends Fragment {
                                     .setDisplayName(name)
                                     .build();
                             user.updateProfile(profileUpdates);
-                            //signUpSucceful = LoginActivity.getDialog();
-                            //signUpSucceful.setContentView(R.layout.custom_dialog);
-                            //if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
-                                //signUpSucceful.getWindow().setBackgroundDrawable(getContext().getDrawable(R.drawable.dialog_bg));
-                            //}
-                            //signUpSucceful.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-                            //signUpSucceful.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
-                            //signUpSucceful.show();
                             LoginActivity.getDialog().show();
                             new CountDownTimer(4000, 1000){
                                 @Override
@@ -178,6 +158,7 @@ public class SignUpFragment extends Fragment {
                                 Toast.makeText(LoginActivity.getContext(), "Registro fallido, intente de nuevo.", Toast.LENGTH_SHORT).show();
                             }
                         }
+                        progressDialog.dismiss();
                     }
                 });
         // [END create_user_with_email]

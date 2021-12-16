@@ -138,37 +138,42 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void showSplash() {
-        dialog.setContentView(R.layout.splash_sreen);
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
-            dialog.getWindow().setBackgroundDrawable(getDrawable(R.drawable.background));
-        }
-        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-        dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
-        dialog.show();
-        new CountDownTimer(2000, 1000){
-            @Override
-            public void onTick(long l)
-            {
+        //dialog.setContentView(R.layout.splash_sreen);
+        //if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
+        //    dialog.getWindow().setBackgroundDrawable(getDrawable(R.drawable.background));
+        //}
+        //dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+        //dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
+        //dialog.show();
+        //new CountDownTimer(2000, 1000){
+        //    @Override
+        //    public void onTick(long l)
+        //    {
 
-            }
-            @Override
-            public void onFinish() {
+        //   }
+        //   @Override
+        //    public void onFinish() {
                 // Check if user is signed in (non-null) and update UI accordingly.
-                dialog.dismiss();
-                FirebaseUser currentUser = mAuth.getCurrentUser();
-                if(currentUser != null){
-                    Intent intent = new Intent(LoginActivity.getContext(), PrincipalActivity.class);
-                    startActivity(intent);
-                }
-            }
-        }.start();
+         //       dialog.dismiss();
+         //       FirebaseUser currentUser = mAuth.getCurrentUser();
+         //       if(currentUser != null){
+          //          Intent intent = new Intent(LoginActivity.getContext(), PrincipalActivity.class);
+         //           startActivity(intent);
+         //       }
+         //   }
+        //}.start();
+
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if(currentUser != null){
+            Intent intent = new Intent(LoginActivity.getContext(), PrincipalActivity.class);
+            startActivity(intent);
+        }
     }
 
     @Override
     public void onStart() {
         showSplash();
         super.onStart();
-
     }
 
     private void inicializarFirebase() {

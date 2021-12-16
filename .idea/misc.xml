@@ -3,20 +3,6 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/ESCUELA/9no semestre/MovilApp/app/src/main/res/layout/activity_ejercicios.xml" value="0.28940217391304346" />
-        <entry key="..\:/ESCUELA/9no semestre/MovilApp/app/src/main/res/layout/activity_login.xml" value="0.36666666666666664" />
-        <entry key="..\:/ESCUELA/9no semestre/MovilApp/app/src/main/res/layout/activity_principal.xml" value="0.28306159420289856" />
-        <entry key="..\:/ESCUELA/9no semestre/MovilApp/app/src/main/res/layout/custom_dialog.xml" value="0.36666666666666664" />
-        <entry key="..\:/ESCUELA/9no semestre/MovilApp/app/src/main/res/layout/edit_account.xml" value="0.36666666666666664" />
-        <entry key="..\:/ESCUELA/9no semestre/MovilApp/app/src/main/res/layout/fragment_asistencia.xml" value="0.36666666666666664" />
-        <entry key="..\:/ESCUELA/9no semestre/MovilApp/app/src/main/res/layout/fragment_bitacora.xml" value="0.36666666666666664" />
-        <entry key="..\:/ESCUELA/9no semestre/MovilApp/app/src/main/res/layout/fragment_home.xml" value="0.28306159420289856" />
-        <entry key="..\:/ESCUELA/9no semestre/MovilApp/app/src/main/res/layout/image_slider_layout.xml" value="0.36367753623188404" />
-        <entry key="..\:/ESCUELA/9no semestre/MovilApp/app/src/main/res/layout/list_element.xml" value="0.28306159420289856" />
-        <entry key="..\:/ESCUELA/9no semestre/MovilApp/app/src/main/res/layout/login_fragment.xml" value="0.36666666666666664" />
-        <entry key="..\:/ESCUELA/9no semestre/MovilApp/app/src/main/res/layout/options_account.xml" value="0.36666666666666664" />
-        <entry key="..\:/ESCUELA/9no semestre/MovilApp/app/src/main/res/layout/signup_fragment.xml" value="0.36666666666666664" />
-        <entry key="..\:/ESCUELA/9no semestre/MovilApp/app/src/main/res/layout/splash_sreen.xml" value="0.36367753623188404" />
         <entry key="..\:/ESCUELA/MovilApp/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.3828125" />
         <entry key="..\:/ESCUELA/MovilApp/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.3828125" />
         <entry key="..\:/ESCUELA/MovilApp/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.3828125" />
@@ -36,18 +22,21 @@
         <entry key="..\:/Users/Cesar Ramirez/AndroidStudioProjects/MovilApp/app/src/main/res/drawable/edit_txt_bg.xml" value="0.37864583333333335" />
         <entry key="..\:/Users/Cesar Ramirez/AndroidStudioProjects/MovilApp/app/src/main/res/drawable/nav_bttom_bg.xml" value="0.3728205128205128" />
         <entry key="..\:/Users/Cesar Ramirez/AndroidStudioProjects/MovilApp/app/src/main/res/drawable/top_actionbar_bg.xml" value="0.37864583333333335" />
-        <entry key="..\:/Users/Cesar Ramirez/AndroidStudioProjects/MovilApp/app/src/main/res/layout/activity_ejercicios.xml" value="0.1757852077001013" />
+        <entry key="..\:/Users/Cesar Ramirez/AndroidStudioProjects/MovilApp/app/src/main/res/layout/activity_ejercicios.xml" value="0.33" />
+        <entry key="..\:/Users/Cesar Ramirez/AndroidStudioProjects/MovilApp/app/src/main/res/layout/activity_forgot_password.xml" value="0.33" />
         <entry key="..\:/Users/Cesar Ramirez/AndroidStudioProjects/MovilApp/app/src/main/res/layout/activity_login.xml" value="0.33" />
         <entry key="..\:/Users/Cesar Ramirez/AndroidStudioProjects/MovilApp/app/src/main/res/layout/activity_loginEjemplo.xml" value="0.16" />
         <entry key="..\:/Users/Cesar Ramirez/AndroidStudioProjects/MovilApp/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Users/Cesar Ramirez/AndroidStudioProjects/MovilApp/app/src/main/res/layout/activity_principal.xml" value="0.33" />
         <entry key="..\:/Users/Cesar Ramirez/AndroidStudioProjects/MovilApp/app/src/main/res/layout/activity_prueba.xml" value="0.22780797101449277" />
         <entry key="..\:/Users/Cesar Ramirez/AndroidStudioProjects/MovilApp/app/src/main/res/layout/activity_signup.xml" value="0.1" />
+        <entry key="..\:/Users/Cesar Ramirez/AndroidStudioProjects/MovilApp/app/src/main/res/layout/activity_splash_screen.xml" value="0.1757852077001013" />
+        <entry key="..\:/Users/Cesar Ramirez/AndroidStudioProjects/MovilApp/app/src/main/res/layout/adapter_message_one.xml" value="0.3625" />
         <entry key="..\:/Users/Cesar Ramirez/AndroidStudioProjects/MovilApp/app/src/main/res/layout/custom_dialog.xml" value="0.33" />
-        <entry key="..\:/Users/Cesar Ramirez/AndroidStudioProjects/MovilApp/app/src/main/res/layout/edit_account.xml" value="0.1757852077001013" />
+        <entry key="..\:/Users/Cesar Ramirez/AndroidStudioProjects/MovilApp/app/src/main/res/layout/edit_account.xml" value="0.33" />
         <entry key="..\:/Users/Cesar Ramirez/AndroidStudioProjects/MovilApp/app/src/main/res/layout/fragment_asistencia.xml" value="0.3625" />
         <entry key="..\:/Users/Cesar Ramirez/AndroidStudioProjects/MovilApp/app/src/main/res/layout/fragment_asistenciaMedica.xml" value="0.203125" />
-        <entry key="..\:/Users/Cesar Ramirez/AndroidStudioProjects/MovilApp/app/src/main/res/layout/fragment_bitacora.xml" value="0.203125" />
+        <entry key="..\:/Users/Cesar Ramirez/AndroidStudioProjects/MovilApp/app/src/main/res/layout/fragment_bitacora.xml" value="0.33" />
         <entry key="..\:/Users/Cesar Ramirez/AndroidStudioProjects/MovilApp/app/src/main/res/layout/fragment_dashboard.xml" value="0.3625" />
         <entry key="..\:/Users/Cesar Ramirez/AndroidStudioProjects/MovilApp/app/src/main/res/layout/fragment_home.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/Cesar Ramirez/AndroidStudioProjects/MovilApp/app/src/main/res/layout/fragment_login.xml" value="0.3625" />
@@ -55,36 +44,12 @@
         <entry key="..\:/Users/Cesar Ramirez/AndroidStudioProjects/MovilApp/app/src/main/res/layout/fragment_sign_up.xml" value="0.3625" />
         <entry key="..\:/Users/Cesar Ramirez/AndroidStudioProjects/MovilApp/app/src/main/res/layout/image_slider_layout.xml" value="0.33" />
         <entry key="..\:/Users/Cesar Ramirez/AndroidStudioProjects/MovilApp/app/src/main/res/layout/list_element.xml" value="0.33" />
-        <entry key="..\:/Users/Cesar Ramirez/AndroidStudioProjects/MovilApp/app/src/main/res/layout/login_fragment.xml" value="0.67" />
+        <entry key="..\:/Users/Cesar Ramirez/AndroidStudioProjects/MovilApp/app/src/main/res/layout/login_fragment.xml" value="0.33" />
         <entry key="..\:/Users/Cesar Ramirez/AndroidStudioProjects/MovilApp/app/src/main/res/layout/options_account.xml" value="0.4108695652173913" />
         <entry key="..\:/Users/Cesar Ramirez/AndroidStudioProjects/MovilApp/app/src/main/res/layout/signup_fragment.xml" value="0.33" />
         <entry key="..\:/Users/Cesar Ramirez/AndroidStudioProjects/MovilApp/app/src/main/res/layout/splash_sreen.xml" value="0.20208333333333334" />
         <entry key="..\:/Users/Cesar Ramirez/AndroidStudioProjects/MovilApp/app/src/main/res/menu/bottom_nav_menu.xml" value="0.3425925925925926" />
         <entry key="..\:/Users/Cesar Ramirez/AndroidStudioProjects/MovilApp/app/src/main/res/menu/user_account_menu.xml" value="0.24814814814814815" />
-        <entry key="..\:/Users/Equipo/AndroidStudioProjects/MovilApp/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.3828125" />
-        <entry key="..\:/Users/Equipo/AndroidStudioProjects/MovilApp/app/src/main/res/drawable/background.xml" value="0.3828125" />
-        <entry key="..\:/Users/Equipo/AndroidStudioProjects/MovilApp/app/src/main/res/drawable/bg_chat_receive.xml" value="0.1" />
-        <entry key="..\:/Users/Equipo/AndroidStudioProjects/MovilApp/app/src/main/res/drawable/bg_chat_send.xml" value="0.1" />
-        <entry key="..\:/Users/Equipo/AndroidStudioProjects/MovilApp/app/src/main/res/drawable/bg_overlay.xml" value="0.3828125" />
-        <entry key="..\:/Users/Equipo/AndroidStudioProjects/MovilApp/app/src/main/res/drawable/border_outline.xml" value="0.23703703703703705" />
-        <entry key="..\:/Users/Equipo/AndroidStudioProjects/MovilApp/app/src/main/res/drawable/button_rounded_border.xml" value="0.3828125" />
-        <entry key="..\:/Users/Equipo/AndroidStudioProjects/MovilApp/app/src/main/res/drawable/button_social.xml" value="0.3828125" />
-        <entry key="..\:/Users/Equipo/AndroidStudioProjects/MovilApp/app/src/main/res/drawable/button_social_border.xml" value="0.3828125" />
-        <entry key="..\:/Users/Equipo/AndroidStudioProjects/MovilApp/app/src/main/res/drawable/container_rounded.xml" value="0.3828125" />
-        <entry key="..\:/Users/Equipo/AndroidStudioProjects/MovilApp/app/src/main/res/drawable/dialog_bg.xml" value="0.3828125" />
-        <entry key="..\:/Users/Equipo/AndroidStudioProjects/MovilApp/app/src/main/res/drawable/edit_txt_bg.xml" value="0.3828125" />
-        <entry key="..\:/Users/Equipo/AndroidStudioProjects/MovilApp/app/src/main/res/drawable/ic_farmacia.xml" value="0.3828125" />
-        <entry key="..\:/Users/Equipo/AndroidStudioProjects/MovilApp/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.3828125" />
-        <entry key="..\:/Users/Equipo/AndroidStudioProjects/MovilApp/app/src/main/res/drawable/top_actionbar_bg.xml" value="0.3828125" />
-        <entry key="..\:/Users/Equipo/AndroidStudioProjects/MovilApp/app/src/main/res/layout/activity_principal.xml" value="0.25" />
-        <entry key="..\:/Users/Equipo/AndroidStudioProjects/MovilApp/app/src/main/res/layout/adapter_message_one.xml" value="0.34193840579710144" />
-        <entry key="..\:/Users/Equipo/AndroidStudioProjects/MovilApp/app/src/main/res/layout/custom_dialog.xml" value="0.1" />
-        <entry key="..\:/Users/Equipo/AndroidStudioProjects/MovilApp/app/src/main/res/layout/fragment_asistencia.xml" value="0.25" />
-        <entry key="..\:/Users/Equipo/AndroidStudioProjects/MovilApp/app/src/main/res/layout/fragment_bitacora.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/Equipo/AndroidStudioProjects/MovilApp/app/src/main/res/layout/fragment_home.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/Equipo/AndroidStudioProjects/MovilApp/app/src/main/res/layout/image_slider_layout.xml" value="0.25" />
-        <entry key="..\:/Users/Equipo/AndroidStudioProjects/MovilApp/app/src/main/res/layout/list_element.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/Equipo/AndroidStudioProjects/MovilApp/app/src/main/res/menu/bottom_nav_menu.xml" value="0.36666666666666664" />
       </map>
     </option>
   </component>
